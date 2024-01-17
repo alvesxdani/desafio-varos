@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  @apply .light;
-}
 
 .dark {
   --color-bg-primary: #131313;
@@ -17,4 +14,8 @@
   --color-bg-primary: #ffffff;
   --color-text-primary: #333;
   --color-accent: #19C819;
+}
+
+:root {
+  @layer light;
 }

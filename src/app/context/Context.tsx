@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { IContextTheme, IProvider } from "../interfaces/interfaces";
 
@@ -20,26 +21,26 @@ const getInitialTheme = () => {
 export const ThemeContext = React.createContext<IContextTheme | undefined>(undefined);
 
 export const ThemeProvider = ({ initialTheme, children }: IProvider) => {
-  const [theme, setTheme] = React.useState(getInitialTheme);
-
-  const rawSetTheme = (theme: string) => {
-    const root = window.document.documentElement;
-    const isDark = theme === "dark";
-
-    root.classList.remove(isDark ? "light" : "dark");
-    root.classList.add(theme);
-
-    localStorage.setItem("color-theme", theme);
-  };
-
-  if (initialTheme) {
-    rawSetTheme(initialTheme);
-  }
+  const [theme, setTheme] = React.useState(getInitialTheme)
 
   React.useEffect(() => {
-    rawSetTheme(theme);
-  }, [theme]);
+    const rawSetTheme = (theme: string) => {
+      const root = window.document.documentElement;
+      const isDark = theme === "dark";
+  
+      root.classList.remove(isDark ? "light" : "dark");
+      root.classList.add(theme);
+  
+      localStorage.setItem("color-theme", theme);
+    };
 
+    rawSetTheme(theme);
+    
+    if (initialTheme) {
+      rawSetTheme(initialTheme);
+    }
+  }, [theme]);
+  
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}

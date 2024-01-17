@@ -8,7 +8,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
+      backgroundColor: {
         primary: "var(--color-bg-primary)",
       },
       textColor: {
