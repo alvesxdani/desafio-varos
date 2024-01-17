@@ -9,12 +9,12 @@
 .dark {
   --color-bg-primary: #131313;
   --color-text-primary: #F2F4F8;
-  --color-text-accent: #19C819
+  --color-accent: #19C819
   ;
 }
 
 .light {
   --color-bg-primary: #ffffff;
   --color-text-primary: #333;
-  --color-text-accent: #19C819;
+  --color-accent: #19C819;
 }
