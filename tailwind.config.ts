@@ -12,7 +12,8 @@ const config: Config = {
       colors: {
         dark: '#333',
         light: '#F2F4F8',
-        primaryAccent: '#19C819'
+        primaryAccent: '#19C819',
+        secondAccent: '#222729'
       }
     },
   },
