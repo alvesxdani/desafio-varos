@@ -1,7 +1,5 @@
 import Header from '@/Components/Header'
-import Intro from '@/Components/Intro'
-import Toggle from '@/Components/Toggle'
-import Image from 'next/image'
+import Intro from '@/Components/Sections/Intro'
 
 export default function Home() {
   return (
