@@ -88,7 +88,7 @@ const Header = () => {
       </div>
 
       {/* Menu mobile */}
-      {isOpen && <div className="flex lg:hidden transition-all">
+      {isOpen && <div className="flex lg:hidden transition-all z-50">
         <Menu className="w-[100%] min-h-[100vh] flex flex-col text-4xl gap-10 items-center justify-center bg-white dark:bg-dark absolute top-0 left-0 z-5" />
         <button className="asbolute right-0 top-0 dark:text-white z-10">
           <IoClose size={30} onClick={toggleMenu}/>
