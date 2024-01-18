@@ -1,5 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
+import { MdOutlineWbSunny } from "react-icons/md";
+import { IoIosMoon } from "react-icons/io";
 
 const useDarkMode = () => {
     const [darkMode, setDarkMode] = useState<boolean>()
@@ -21,7 +23,11 @@ const useDarkMode = () => {
     }, [darkMode])
 
   return (
-    <button onClick={() => setDarkMode(!darkMode)}>Dark mode</button>
+    <button onClick={() => setDarkMode(!darkMode)}>
+      { darkMode ?
+      <IoIosMoon size="2em"/> :
+      <MdOutlineWbSunny size="2em" /> }
+    </button>
   )
 }
 
