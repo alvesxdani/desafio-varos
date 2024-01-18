@@ -33,7 +33,7 @@ const Header = () => {
       };
 
   return (
-    <header className="flex justify-between items-center flex-wrap h-[88px] px-10 py-3 font-[600]">
+    <header className="flex justify-between items-center flex-wrap h-[88px] px-10 py-3 font-[600] text-sm w-[100%]">
       <div className="flex gap-10">
         <Image
           src="./Header/logo.svg"
@@ -45,10 +45,35 @@ const Header = () => {
         />
 
         {/* Menu desk */}
-        <Menu className="hidden lg:flex w-[100%] lg:gap-[80px]" />
+        <Menu className="hidden lg:flex w-[100%] lg:gap-[70px]" />
       </div>
 
-      <div className="flex gap-8">
+      <div className="hidden lg:flex gap-2 items-center">
+        <div className="flex gap-4 whitespace-nowrap px-[13px] py-[10px]">
+        <Image
+            src="./Header/carrinho.svg"
+            width={10}
+            height={10}
+            alt="Logo"
+            priority={true}
+            className="hidden lg:flex"
+          />
+          <span className="flex">Assinar Agora</span>
+        </div>
+        <div className="hidden lg:flex gap-4 px-[13px] py-[10px]">
+        <Image
+            src="./Header/user.svg"
+            width={25}
+            height={25}
+            alt="Logo"
+            priority={true}
+            className="hidden lg:block"
+          />
+          <span className="w-auto">Entrar</span>
+        </div>
+      </div>
+
+      <div className="flex gap-8 lg:gap-0">
         <Toggle />
         <button onClick={toggleMenu}>
           <Image
