@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { MdOutlineWbSunny } from "react-icons/md";
 import { IoIosMoon } from "react-icons/io";
 
-const useDarkMode = () => {
+const Toggle = () => {
     const [darkMode, setDarkMode] = useState<boolean>()
 
     useEffect(() => {
@@ -31,4 +31,4 @@ const useDarkMode = () => {
   )
 }
 
-export default useDarkMode
+export default Toggle
