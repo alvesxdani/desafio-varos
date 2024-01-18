@@ -6,3 +6,24 @@ img {
   width: auto;
   height: auto;
 }
+
+@keyframes translatestf {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-500%);
+	}
+}
+
+@keyframes translateinfinite {
+	100% {
+		transform: translateX(calc(-180px * 12));
+	}
+}
+
+.animaInfinite {
+  animation: translatestf 15s linear infinite;
+  overflow: hidden;
+  position: relative;
+}
