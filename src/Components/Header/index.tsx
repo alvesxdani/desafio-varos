@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <header className="flex justify-between items-center flex-wrap h-[88px] px-10 py-3">
-      <div className="flex gap-4">
+      <div className="flex gap-10">
         <Image
           src="./Header/logo.svg"
           width={100}
@@ -44,8 +44,8 @@ const Header = () => {
           className="brightness-0 dark:brightness-100"
         />
 
-        {/* Menu mobile */}
-        <Menu className="hidden list-none md:flex w-[100%]" />
+        {/* Menu tablet/desk */}
+        <Menu className="hidden list-none md:flex w-[100%] md: gap-10 lg:gap-[80px]" />
       </div>
 
       <div className="flex gap-8">
@@ -62,6 +62,7 @@ const Header = () => {
         </button>
       </div>
 
+      {/* Menu mobile */}
       {isOpen && <div className="flex md:hidden transition-all">
         <Menu className="md:hidden w-[100%] min-h-[100vh] flex flex-col text-4xl gap-10 items-center justify-center bg-white dark:bg-dark absolute top-0 left-0 z-5" />
         <button className="asbolute right-0 top-0 dark:text-white z-10">
