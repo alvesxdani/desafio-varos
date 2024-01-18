@@ -12,7 +12,7 @@ img {
 		transform: translateX(100%);
 	}
 	100% {
-		transform: translateX(-500%);
+		transform: translateX(-100%);
 	}
 }
 
@@ -23,7 +23,7 @@ img {
 }
 
 .animaInfinite {
-  animation: translatestf 15s linear infinite;
+  animation: translatestf 10s linear infinite;
   overflow: hidden;
   position: relative;
 }
