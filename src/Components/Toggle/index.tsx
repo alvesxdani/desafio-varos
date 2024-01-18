@@ -25,8 +25,8 @@ const Toggle = () => {
   return (
     <button onClick={() => setDarkMode(!darkMode)}>
       { darkMode ?
-      <IoIosMoon size="2em"/> :
-      <MdOutlineWbSunny size="2em" /> }
+      <IoIosMoon size="1.7rem"/> :
+      <MdOutlineWbSunny size="1.7rem" /> }
     </button>
   )
 }
