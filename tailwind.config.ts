@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        blackbg: '#333',
+        dark: '#333',
+        light: '#F2F4F8',
         primaryAccent: '#19C819'
       }
     },
