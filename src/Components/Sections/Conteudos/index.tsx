@@ -1,10 +1,29 @@
-import Button from '@/Components/Button'
-import Image from 'next/image'
-import React from 'react'
-import { IoMdArrowDropdown } from 'react-icons/io'
-import { IoMdArrowDropright } from 'react-icons/io'
+"use client";
+import Button from "@/Components/Button";
+import Image from "next/image";
+import React, { MouseEventHandler, useState } from "react";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { IoMdArrowDropright } from "react-icons/io";
+
+interface IOptions {
+  id: number;
+  label: string;
+  icon: string;
+}
 
 const Conteudos = () => {
+  const [selectedTab, setSelectedTab] = useState<number | null>(1);
+
+  const handleTabClick = (tabId: number) => {
+    setSelectedTab(tabId);
+  };
+
+  const options: IOptions[] = [
+    { id: 1, label: "Carteira Seleção", icon: "/Conteudos/selecao-icon.png" },
+    { id: 2, label: "Carteira FATOR", icon: "/Conteudos/FATOR.png" },
+    { id: 3, label: "Carteira Dividendos", icon: "/Conteudos/Dividendos.png" },
+    { id: 4, label: "Carteira Seleção", icon: "/Conteudos/selecao-icon.png" },
+  ];
   return (
     <section id="conteudos" className="flex flex-col p-2 gap-10">
       <div className="flex flex-col gap-4">
@@ -23,63 +42,43 @@ const Conteudos = () => {
             Carteiras
           </Button>
           <ul className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] flex flex-col gap-[22px] justify-start items-start text-white">
-            <li className="bg-[#222729] bg-opacity-50 p-4 flex gap-4 rounded-[32px] justify-center">
-              <Image
-                src="/Conteudos/selecao-icon.png"
-                width={22}
-                height={22}
-                alt="Logo"
-                priority={true}
-                className="w-[22px]"
-              />
-              <span>Carteira Seleção</span>
-            </li>
-            <li className="bg-opacity-50 p-4 flex gap-4 rounded-[32px] justify-center">
-              <Image
-                src="/Conteudos/FATOR.png"
-                width={20}
-                height={20}
-                alt="Logo"
-                priority={true}
-                className="w-[23px]"
-              />
-              <span>Carteira FATOR</span>
-            </li>
-
-            <li className="bg-opacity-50 p-4 flex gap-4 rounded-[32px] justify-center">
-              <Image
-                src="/Conteudos/Dividendos.png"
-                width={20}
-                height={20}
-                alt="Logo"
-                priority={true}
-                className="w-[23px]"
-              />
-              <span>Carteira Dividendos</span>
-            </li>
-            <li className="bg-opacity-50 p-4 flex gap-4 rounded-[32px] justify-center">
-              <Image
-                src="/Conteudos/selecao-icon.png"
-                width={22}
-                height={22}
-                alt="Logo"
-                priority={true}
-                className="w-[22px]"
-              />
-              <span>Carteira Seleção</span>
-            </li>
+            {options.map(({ id, icon, label }) => {
+              return (
+                <li
+                  key={id}
+                  className={`p-4 flex gap-4 rounded-[32px] justify-center ${
+                    selectedTab === id ? "bg-[#222729] bg-opacity-50" : ""
+                  }`}
+                  onClick={() => handleTabClick(id)}
+                >
+                  <Image
+                    src={icon}
+                    width={22}
+                    height={22}
+                    alt="Logo"
+                    priority={true}
+                    className="w-[23px]"
+                  />
+                  <span>{label}</span>
+                </li>
+              );
+            })}
           </ul>
-          <Button bg="navy" format="rounded" icon={<IoMdArrowDropright />}>
+          <Button bg="dark" format="rounded" icon={<IoMdArrowDropright />}>
             Cursos
           </Button>
-          <Button bg="navy" format="rounded" icon={<IoMdArrowDropright />}>
+          <Button bg="dark" format="rounded" icon={<IoMdArrowDropright />}>
             Consultoria
           </Button>
         </div>
-        <div className='bg-[#131516] border-[#222729] border p-8 rounded-[32px] flex flex-col gap-[22px] justify-start items-start text-white'>imagem</div>
+        <div className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] flex flex-col gap-[22px] justify-start items-start text-white">
+          {selectedTab !== null
+            ? options.find(({ id }) => id === selectedTab)?.label
+            : null}
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Conteudos
+export default Conteudos;
