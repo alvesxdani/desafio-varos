@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/Components/Button";
 import Image from "next/image";
-import React, { Key, useState } from "react";
+import React, { Key, MouseEventHandler, useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
 
@@ -30,10 +30,14 @@ interface ITab {
 }
 
 const Conteudos = () => {
-  const [selectedTab, setSelectedTab] = useState<number | null>(1);
+  const [selectedTitle, setSelectedTitle] = useState<number | null>(1);
+  const [activeTab, setActiveTab] = useState<Record<number, number>>({});
 
-  const handleTabClick = (tabId: number) => {
-    setSelectedTab(tabId);
+  const handleActiveTab = (tabId: number) => {
+    setActiveTab((prevActiveTab) => ({
+      ...prevActiveTab,
+      [tabId]: prevActiveTab[tabId] ? 0 : 1, // Alternar entre 0 e 1
+    }));
   };
 
   const options: IOptions = {
@@ -111,10 +115,11 @@ const Conteudos = () => {
     },
     {
       id: 3,
-      label: "Cursos",
+      label: "Consultoria",
       content: options.consultoria,
     },
   ];
+
   return (
     <section id="conteudos" className="flex flex-col p-4 gap-10">
       <div className="flex flex-col gap-4 md:w-[90%] lg:w-[70%] text-start">
@@ -129,70 +134,47 @@ const Conteudos = () => {
 
       <div className="flex flex-col w-[100%] md:flex-row gap-8 lg:gap-[100px] md:justify-center">
         <div className="flex flex-col gap-4">
-          {Tabs.map(({ id, label, content }) => {
+          {Tabs.map(({ id: tabId, label, content }) => {
+            const isActive = activeTab[tabId] === 1;
             return (
-              <>
-                <Button bg="grey" format="rounded" icon={<IoMdArrowDropdown />}>
+              <div key={tabId} className="flex flex-col gap-4">
+                <Button
+                  bg="grey"
+                  format="rounded"
+                  icon={<IoMdArrowDropdown />}
+                  onClick={() => handleActiveTab(tabId)}
+                >
                   {label}
                 </Button>
-                <ul className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] flex flex-col gap-[22px] justify-start items-start text-white">
-                  {content.map(({ id, label, icon }) => {
-                    return (
-                      <li
-                  key={id}
-                  className={`p-4 flex gap-4 rounded-[32px] justify-center text-sm ${
-                    selectedTab === id ? "bg-[#222729] bg-opacity-50" : ""
-                  }`}
-                  onClick={() => handleTabClick(id)}
-                >
-                  <Image
-                    src={icon}
-                    width={22}
-                    height={22}
-                    alt="Logo"
-                    priority={true}
-                    className="h-[23px]"
-                  />
-                  <span className="whitespace-nowrap">{label}</span>
-                </li>
-                    )
-                  })}
-                </ul>
-              </>
+                {isActive && (
+                  <ul className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] flex flex-col gap-[22px] justify-start items-start text-white" key={`ul-${tabId}`}>
+                    {content.map(({ id: contentId, label, icon }) => {
+                      return (
+                        <li
+                          key={contentId}
+                          className={`p-4 flex gap-4 rounded-[32px] justify-center text-sm ${
+                            selectedTitle === contentId
+                              ? "bg-[#222729] bg-opacity-50"
+                              : ""
+                          }`}
+                        >
+                          <Image
+                            src={icon}
+                            width={22}
+                            height={22}
+                            alt="Logo"
+                            priority={true}
+                            className="h-[23px]"
+                          />
+                          <span className="whitespace-nowrap">{label}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </div>
             );
           })}
-          {/* <Button bg="grey" format="rounded" icon={<IoMdArrowDropdown />}>
-            Carteiras
-          </Button>
-          <ul className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] flex flex-col gap-[22px] justify-start items-start text-white">
-            {options.map(({ id, icon, label }) => {
-              return (
-                <li
-                  key={id}
-                  className={`p-4 flex gap-4 rounded-[32px] justify-center text-sm ${
-                    selectedTab === id ? "bg-[#222729] bg-opacity-50" : ""
-                  }`}
-                  onClick={() => handleTabClick(id)}
-                >
-                  <Image
-                    src={icon}
-                    width={22}
-                    height={22}
-                    alt="Logo"
-                    priority={true}
-                    className="h-[23px]"
-                  />
-                  <span className="whitespace-nowrap">{label}</span>
-                </li>
-              );
-            })}
-          </ul>
-          <Button bg="dark" format="rounded" icon={<IoMdArrowDropright />}>
-            Cursos
-          </Button>
-          <Button bg="dark" format="rounded" icon={<IoMdArrowDropright />}>
-            Consultoria
-          </Button> */}
         </div>
         <div className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] flex flex-col gap-[22px] justify-start items-start text-white md:w-[560px] lg:w-[662px] relative overflow-hidden">
           <div className="flex gap-4 p-4">
