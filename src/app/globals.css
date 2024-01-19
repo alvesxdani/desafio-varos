@@ -12,18 +12,12 @@ img {
 		transform: translateX(100%);
 	}
 	100% {
-		transform: translateX(-100%);
-	}
-}
-
-@keyframes translateinfinite {
-	100% {
-		transform: translateX(calc(-180px * 12));
+		transform: translateX(-90%);
 	}
 }
 
 .animaInfinite {
-  animation: translatestf 10s linear infinite;
+  animation: translatestf 8s linear infinite;
   overflow: hidden;
   position: relative;
 }
