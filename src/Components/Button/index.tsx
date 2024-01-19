@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes } from "react";
 
 type ButtonT = ButtonHTMLAttributes<HTMLButtonElement> & {
   format: "square" | "rounded";
-  bg: "green" | "grey" | "navy"
+  bg: "green" | "grey" | "dark"
   icon?: JSX.Element
 };
 
@@ -11,7 +11,8 @@ const Button = ({ format, bg, children, icon }: ButtonT): JSX.Element => {
     <button className={`
         ${format === "rounded" ? 'rounded-[48px]' : 'rounded-[5px]'}
         ${bg === 'green' ? 'bg-primaryAccent bg-opacity-40 text-primaryAccent' : 
-          bg === 'grey' ? 'bg-secondAccent text-white': 'bg-[#222729] text-white'
+          bg === 'grey' ? 'bg-secondAccent text-white': 
+          bg === 'dark' ? 'bg-[#131516] text-white border border-[#222729]' : ''
        }
         py-4 px-12 font-bold flex items-center justify-center gap-3
         `}>
