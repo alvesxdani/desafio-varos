@@ -72,9 +72,28 @@ const Conteudos = () => {
           </Button>
         </div>
         <div className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] flex flex-col gap-[22px] justify-start items-start text-white">
-          {selectedTab !== null
-            ? options.find(({ id }) => id === selectedTab)?.label
-            : null}
+          <div className="flex gap-4 p-4">
+            {selectedTab !== null && (
+              <Image
+                src={
+                  options.find(({ id }) => id === selectedTab)?.icon ||
+                  options[0].icon
+                }
+                width={22}
+                height={22}
+                alt="Logo"
+                priority={true}
+                className="w-[23px]"
+              />
+            )}
+            {selectedTab !== null
+              ? options.find(({ id }) => id === selectedTab)?.label
+              : null}
+          </div>
+          <div className="flex">
+            <h3 className="text-xl font-semibold">A combinação perfeita pra você aproveitar a virada da Bolsa</h3>
+            <p>untamos o que há de melhor nas Carteiras VAROS: uma estratégia completa para você ter resultados exponenciais.</p>
+          </div>
         </div>
       </div>
     </section>
