@@ -1,4 +1,5 @@
 import Header from '@/Components/Header'
+import Conteudos from '@/Components/Sections/Conteudos'
 import Intro from '@/Components/Sections/Intro'
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <Header />
       <main>
         <Intro />
+        <Conteudos />
       </main>
     </>
   )
