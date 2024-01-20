@@ -4,104 +4,31 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { IoMdArrowDropdown } from 'react-icons/io'
 import { IoMdArrowDropright } from 'react-icons/io'
-
-interface IOptions {
-  title: string
-  children: {
-    id: number
-    label: string
-    icon: string
-  }[]
-}
+import { options } from './list'
 
 const Conteudos = () => {
-  const [selectedTitle, setSelectedTitle] = useState<number>(1)
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [selectedTitle, setSelectedTitle] = useState<{id: number, label: string, icon: string}>(
+    {
+      id: options[0].children[0].id,
+      label: options[0].children[0].label,
+      icon: options[0].children[0].icon
+    }
+  )
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   // Função para manipular a abertura/fechamento do accordion
   const toggleAccordion = (index: number) => {
-    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index))
     console.log(index)
+  }
+
+  const handleClick = (id: number, label: string, icon: string) => {
+    setSelectedTitle({id: id, label: label, icon: icon})
   };
 
 
-  const options: IOptions[] = [
-    {
-      title: 'Carteiras',
-      children: [
-        {
-          id: 1,
-          label: 'Carteira Seleção',
-          icon: '/Conteudos/carteiras/selecao-icon.png',
-        },
-        {
-          id: 2,
-          label: 'Carteira FATOR',
-          icon: '/Conteudos/carteiras/FATOR.png',
-        },
-        {
-          id: 3,
-          label: 'Carteira Dividendos',
-          icon: '/Conteudos/carteiras/Dividendos.png',
-        },
-        {
-          id: 4,
-          label: 'Carteira Essencial',
-          icon: '/Conteudos/carteiras/Essencial.png',
-        },
-        {
-          id: 5,
-          label: 'Carteira de Flls',
-          icon: '/Conteudos/carteiras/Flls.png',
-        },
-        {
-          id: 6,
-          label: 'Carteira Small Caps',
-          icon: '/Conteudos/carteiras/Flls.png',
-        },
-      ],
-    },
-    {
-      title: 'Cursos',
-      children: [
-        {
-          id: 1,
-          label: 'Valuation 2.0',
-          icon: '/Conteudos/cursos/valuation.png',
-        },
-        { id: 2, label: 'Código.py', icon: '/Conteudos/cursos/CODIGO.png' },
-        { id: 3, label: 'Dash.py', icon: '/Conteudos/cursos/Dash.png' },
-        {
-          id: 4,
-          label: 'Carteira Essencial',
-          icon: '/Conteudos/cursos/Essencial.png',
-        },
-        {
-          id: 5,
-          label: 'Cursos Reels',
-          icon: '/Conteudos/cursos/minicurso.png',
-        },
-        {
-          id: 6,
-          label: 'Enciclopédia do Fll',
-          icon: '/Conteudos/cursos/Enciclopedia.png',
-        },
-      ],
-    },
-    {
-      title: 'Consultoria',
-      children: [
-        {
-          id: 1,
-          label: 'Consultoria VAROS',
-          icon: '/Conteudos/consultoria/VZA.png',
-        },
-      ],
-    },
-  ]
-
   return (
-    <section id="conteudos" className="flex flex-col p-4 gap-10">
+    <section id="conteudos" className="flex flex-col p-4 gap-10 justify-center">
       <div className="flex flex-col gap-4 md:w-[90%] lg:w-[70%] text-start">
         <h2 className="text-2xl md:text-[38px] text-center md:text-start leading-[120%] font-bold md:max-w-[60%]">
           Simplifique seus investimentos e alcance seus objetivos
@@ -125,47 +52,43 @@ const Conteudos = () => {
                 >
                   {title}
                 </Button>
-                {openIndex  === index && <ul
-                        className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] flex flex-col gap-[22px] justify-start items-start text-white"
-                      >
-                {children.map(
-                  ({ id, label, icon }) =>
-                   (
-                        <li
+                {openIndex === index && (
+                  <ul className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] flex flex-col gap-[22px] justify-start items-start text-white">
+                    {children.map(({ id, label, icon }) => (
+                      <li
                         key={id}
-                          onClick={() => setSelectedTitle(id)}
-                          className={`p-4 flex gap-4 rounded-[32px] justify-center text-sm cursor-pointer ${
-                            selectedTitle === id
-                              ? 'bg-[#222729] bg-opacity-50'
-                              : ''
-                          }`}
-                        >
-                          <Image
-                            src={icon}
-                            width={22}
-                            height={22}
-                            alt="Logo"
-                            priority={true}
-                            className="h-[23px]"
-                          />
-                          <span className="whitespace-nowrap">{label}</span>
-                        </li>
-                    ),
+                        onClick={() => handleClick(id, label, icon)}
+                        className={`p-4 flex gap-4 rounded-[32px] justify-center text-sm cursor-pointer ${
+                          selectedTitle.id === id
+                            ? 'bg-[#222729] bg-opacity-50'
+                            : ''
+                        }`}
+                      >
+                        <Image
+                          src={icon}
+                          width={22}
+                          height={22}
+                          alt="Logo"
+                          priority={true}
+                          className="h-[23px]"
+                        />
+                        <span className="whitespace-nowrap">{label}</span>
+                      </li>
+                    ))}
+                  </ul>
                 )}
-                </ul>}
               </div>
             )
           })}
         </div>
-        <div className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] flex flex-col gap-[22px] justify-start items-start 
-          text-white md:w-[560px] lg:w-[662px] relative overflow-hidden">
+        <div
+          className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] flex flex-col gap-[22px] justify-start items-start 
+          text-white md:w-[560px] lg:w-[662px] relative overflow-hidden"
+        >
           <div className="flex gap-4 p-4">
-            {/* {selectedTab !== null && (
+            {selectedTitle !== null && (
               <Image
-                src={
-                  options.find(({ id }) => id === selectedTab)?.icon ||
-                  options[0].icon
-                }
+                src={selectedTitle.icon}
                 width={22}
                 height={22}
                 alt="Logo"
@@ -173,9 +96,8 @@ const Conteudos = () => {
                 className="w-[23px]"
               />
             )}
-            {selectedTab !== null
-              ? options.find(({ id }) => id === selectedTab)?.label
-              : null} */}
+            {selectedTitle !== null
+              ? selectedTitle.label : ''}
           </div>
           <div className="flex flex-col gap-4 md:w-[70%] md:min-h-[400px]">
             <h3 className="text-2xl font-semibold leading-6">
