@@ -4,11 +4,14 @@ type ButtonT = ButtonHTMLAttributes<HTMLButtonElement> & {
   format: "square" | "rounded";
   bg: "green" | "grey" | "dark"
   icon?: JSX.Element
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 };
 
-const Button = ({ format, bg, children, icon }: ButtonT): JSX.Element => {
+const Button = ({ format, bg, children, icon, onClick }: ButtonT): JSX.Element => {
   return (
-    <button className={`
+    <button 
+    onClick={onClick}
+    className={`
         ${format === "rounded" ? 'rounded-[48px]' : 'rounded-[5px]'}
         ${bg === 'green' ? 'bg-primaryAccent bg-opacity-40 text-primaryAccent' : 
           bg === 'grey' ? 'bg-secondAccent text-white': 
