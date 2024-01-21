@@ -51,7 +51,7 @@ const Newsletter = () => {
   return (
     <section
       id="conteudos"
-      className="flex flex-col p-6 mb-24 gap-10 justify-center items-center md:flex-row md:items-start"
+      className="flex flex-col p-6 mb-32 gap-10 justify-center items-center md:flex-row md:items-start"
     >
       <div className="flex flex-col gap-2 md:w-[50%]">
         <h2 className="text-3xl text-center font-bold md:text-3xl md:text-start">
