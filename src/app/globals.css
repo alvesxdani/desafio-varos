@@ -24,6 +24,10 @@ img {
 }
 
 /* Cores para swiperjs */
+.swiper-pagination-bullet {
+	background-color: #373737 !important;
+}
+
 .swiper-pagination-bullet-active {
 	background-color: #19C819 !important;
 }
