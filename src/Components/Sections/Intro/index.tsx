@@ -6,7 +6,7 @@ const Intro = () => {
   return (
     <section
       id="intro"
-      className="w-[100%] px-4 mt-[160px] flex items-center gap-[72px] mb-[164px] justify-center p-10"
+      className="w-[100%] mt-[160px] flex items-center gap-[72px] mb-[164px] justify-center p-10"
     >
       <div className="flex flex-col gap-7 md:w-[40%]">
         <div className="flex flex-col items-center justify-center md:items-start gap-8">
