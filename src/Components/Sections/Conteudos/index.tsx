@@ -21,6 +21,7 @@ const Conteudos = () => {
   // Função para manipular a abertura/fechamento do accordion
   const toggleAccordion = (index: number) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index))
+    console.log(index)
   }
 
   const handleClick = (id: number, label: string, icon: string) => {
@@ -50,7 +51,13 @@ const Conteudos = () => {
                 <Button
                   bg="grey"
                   format="rounded"
-                  icon={<IoMdArrowDropdown />}
+                  icon={
+                    openIndex === index ? (
+                      <IoMdArrowDropdown />
+                    ) : (
+                      <IoMdArrowDropright />
+                    )
+                  }
                   onClick={() => toggleAccordion(index)}
                 >
                   {title}
