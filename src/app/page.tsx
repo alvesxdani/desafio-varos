@@ -3,6 +3,7 @@ import Newsletter from '@/Components/Sections/Newsletter'
 import Conteudos from '@/Components/Sections/Conteudos'
 import Intro from '@/Components/Sections/Intro'
 import Marketing from '@/Components/Sections/Marketing'
+import Footer from '@/Components/Footer'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Marketing />
         <Newsletter />
       </main>
+      <Footer />
     </>
   )
 }
