@@ -7,28 +7,31 @@ import { IoMdArrowDropright } from 'react-icons/io'
 import { options } from './list'
 
 const Conteudos = () => {
-  const [selectedTitle, setSelectedTitle] = useState<{id: number, label: string, icon: string}>(
-    {
-      id: options[0].children[0].id,
-      label: options[0].children[0].label,
-      icon: options[0].children[0].icon
-    }
-  )
+  const [selectedTitle, setSelectedTitle] = useState<{
+    id: number
+    label: string
+    icon: string
+  }>({
+    id: options[0].children[0].id,
+    label: options[0].children[0].label,
+    icon: options[0].children[0].icon,
+  })
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   // Função para manipular a abertura/fechamento do accordion
   const toggleAccordion = (index: number) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index))
-    console.log(index)
   }
 
   const handleClick = (id: number, label: string, icon: string) => {
-    setSelectedTitle({id: id, label: label, icon: icon})
-  };
-
+    setSelectedTitle({ id: id, label: label, icon: icon })
+  }
 
   return (
-    <section id="conteudos" className="flex flex-col p-6 mb-20 gap-10 justify-center items-center">
+    <section
+      id="conteudos"
+      className="flex flex-col p-6 mb-20 gap-10 justify-center items-center"
+    >
       <div className="flex flex-col gap-4 md:w-[90%] lg:w-[100%] text-left">
         <h2 className="text-2xl md:text-[38px] text-center md:text-start leading-[120%] font-bold md:max-w-[60%]">
           Simplifique seus investimentos e alcance seus objetivos
@@ -96,8 +99,7 @@ const Conteudos = () => {
                 className="w-[23px]"
               />
             )}
-            {selectedTitle !== null
-              ? selectedTitle.label : ''}
+            {selectedTitle !== null ? selectedTitle.label : ''}
           </div>
           <div className="flex flex-col gap-4 md:w-[70%] md:min-h-[400px]">
             <h3 className="text-2xl font-semibold leading-6">
@@ -108,15 +110,15 @@ const Conteudos = () => {
               completa para você ter resultados exponenciais.
             </p>
           </div>
-          <div className="rounded-xl md:absolute md:bottom-0 translate-x-6">
+          <div className="rounded-xl md:absolute md:bottom-0 md:translate-x-6">
             <Image
               src="/Conteudos/grafico.png"
               width={2000}
               height={2000}
               alt="Logo"
               priority={true}
-              className="h-[292px] box-border relative object-cover 
-              md:object-contain md:w-[621px] md:h-auto"
+              className="h-[292px] box-border object-cover 
+              md:object-contain md:w-[621px] md:h-auto rounded-[32px]"
             />
           </div>
         </div>
