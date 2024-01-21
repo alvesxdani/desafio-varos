@@ -1,6 +1,7 @@
 import Header from '@/Components/Header'
 import Conteudos from '@/Components/Sections/Conteudos'
 import Intro from '@/Components/Sections/Intro'
+import Marketing from '@/Components/Sections/Marketing'
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <main>
         <Intro />
         <Conteudos />
+        <Marketing />
       </main>
     </>
   )
