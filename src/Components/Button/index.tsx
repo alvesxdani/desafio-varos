@@ -25,7 +25,7 @@ const Button = ({
         ${format === 'rounded' ? 'rounded-[48px]' : 'rounded-[5px]'}
         ${
           bg === 'green'
-            ? 'bg-primaryAccent bg-opacity-40 text-primaryAccent'
+            ? 'bg-primaryAccent bg-opacity-30 text-primaryAccent'
             : bg === 'grey'
             ? 'bg-secondAccent text-white'
             : bg === 'dark'
