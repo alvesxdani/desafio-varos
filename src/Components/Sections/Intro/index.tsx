@@ -1,6 +1,7 @@
 import Button from '@/Components/Button'
 import Image from 'next/image'
 import React from 'react'
+import { FaArrowRightLong } from 'react-icons/fa6'
 
 const Intro = () => {
   return (
@@ -19,7 +20,7 @@ const Intro = () => {
               melhor forma possível.
             </p>
           </div>
-          <Button format="rounded" bg="green">
+          <Button format="rounded" bg="green" icon={<FaArrowRightLong/>}>
             Comprar agora
           </Button>
         </div>
