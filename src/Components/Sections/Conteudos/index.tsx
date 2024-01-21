@@ -30,7 +30,7 @@ const Conteudos = () => {
   return (
     <section
       id="conteudos"
-      className="flex flex-col p-6 mb-20 gap-10 justify-center items-center"
+      className="flex flex-col p-6 mb-24 gap-10 justify-center items-center"
     >
       <div className="flex flex-col gap-4 md:w-[90%] lg:w-[100%] text-left">
         <h2 className="text-2xl md:text-[38px] text-center md:text-start leading-[120%] font-bold md:max-w-[60%]">
