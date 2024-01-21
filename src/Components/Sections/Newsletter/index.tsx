@@ -53,7 +53,7 @@ const Newsletter = () => {
       id="conteudos"
       className="flex flex-col p-6 mb-24 gap-10 justify-center items-center md:flex-row md:items-start"
     >
-      <div className="flex flex-col gap-2 w-[50%]">
+      <div className="flex flex-col gap-2 md:w-[50%]">
         <h2 className="text-3xl text-center font-bold md:text-3xl md:text-start">
           Cadastre-se para receber mais informações.
         </h2>
@@ -62,7 +62,7 @@ const Newsletter = () => {
         </p>
       </div>
 
-      <div className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] gap-[22px] justify-center text-white w-[50%]">
+      <div className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] gap-[22px] justify-center text-white w-full md:w-[50%]">
         <form
           onSubmit={sendEmail}
           ref={form}
