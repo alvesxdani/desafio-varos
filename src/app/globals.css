@@ -7,6 +7,7 @@ img {
   height: auto;
 }
 
+/* Animação do slide */
 @keyframes translatestf {
 	0% {
 		transform: translateX(100%);
@@ -20,4 +21,9 @@ img {
   animation: translatestf 8s linear infinite;
   overflow: hidden;
   position: relative;
+}
+
+/* Cores para swiperjs */
+.swiper-pagination-bullet-active {
+	background-color: #19C819 !important;
 }
