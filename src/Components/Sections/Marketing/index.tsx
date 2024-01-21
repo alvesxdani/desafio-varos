@@ -67,7 +67,7 @@ const Marketing = () => {
           />
 
           <div className="rounded-3xl p-px bg-gradient-to-r from-[#4D5358] to-transparent w-[100%]">
-            <div className="dark:bg-dark bg-white p-10 rounded-3xl m-[1px] text-xl flex gap-4 justify-content items-center md:gap-9 text-center">
+            <div className="dark:bg-dark bg-white p-5 rounded-3xl m-[1px] text-xl flex gap-4 justify-content items-center md:gap-9 text-center">
               <div className="flex flex-col items-center justify-center">
                 <p className="font-bold">+1000</p>
                 <p className="text-sm">
