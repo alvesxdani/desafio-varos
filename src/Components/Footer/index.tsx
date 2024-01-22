@@ -11,7 +11,7 @@ const Footer = () => {
           height={74}
           alt="Logo"
           priority={true}
-          className="w-[74px] brightness-0 dark:brightness-100"
+          className="w-[74px] dark:brightness-100"
         />
         <Image
           src="./Header/logo.svg"
