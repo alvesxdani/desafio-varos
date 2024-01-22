@@ -2,6 +2,8 @@
 
 Este é o repositório do desafio que realizei para um teste técnico, uma aplicação web desenvolvida utilizando Next.js, TypeScript, Tailwind CSS e outras tecnologias. Este README fornecerá informações essenciais sobre o projeto, incluindo como configurá-lo, executá-lo e contribuir para o desenvolvimento.
 
+<a href="https://desafio-varos.vercel.app/">Deploy</a>
+
 ## Tecnologias Principais
 
 O projeto foi construído com as seguintes tecnologias:
