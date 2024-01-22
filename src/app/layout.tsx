@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import './globals.css'
 import { RedHat } from '@/Fonts/fonts'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Varos',
