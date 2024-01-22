@@ -49,8 +49,8 @@ const Newsletter = () => {
 
     useEffect(() => {
       AOS.init({
-        delay: 500,
-        duration: 2000,
+        delay: -80,
+        duration: 1000,
       })
     }, [])
 

@@ -13,8 +13,8 @@ import 'aos/dist/aos.css'
 const Marketing = () => {
     useEffect(() => {
       AOS.init({
-        delay: -901,
-        duration: 667,
+        delay: -80,
+        duration: 1000,
       })
     }, [])
 
