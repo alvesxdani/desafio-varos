@@ -94,8 +94,9 @@ const Newsletter = () => {
             className="bg-secondAccent border border-[#4D5358] py-3 px-5 rounded-md"
           />
           <input
-            id="message"
-            name="message"
+            type='tel'
+            id="tel"
+            name="tel"
             value={msg}
             placeholder="Celular"
             onChange={({ target }) => setMsg(target.value)}
