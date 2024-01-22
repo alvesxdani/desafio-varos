@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Projeto Desafio Varos
 
-## Getting Started
+Este é o repositório do desafio que realizei para um teste técnico, uma aplicação web desenvolvida utilizando Next.js, TypeScript, Tailwind CSS e outras tecnologias. Este README fornecerá informações essenciais sobre o projeto, incluindo como configurá-lo, executá-lo e contribuir para o desenvolvimento.
 
-First, run the development server:
+## Tecnologias Principais
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O projeto foi construído com as seguintes tecnologias:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Next.js](https://nextjs.org/): Um framework React para construir aplicações web rápidas e eficientes.
+- [TypeScript](https://www.typescriptlang.org/): Um superset tipado do JavaScript que adiciona verificação de tipo estático ao código.
+- [Tailwind CSS](https://tailwindcss.com/): Um framework CSS utilitário de baixo nível para criar designs altamente personalizáveis.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Recursos Principais
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 1. Validação de Formulário para Newsletter
 
-## Learn More
+A aplicação inclui uma funcionalidade de validação de formulário para a inscrição na newsletter. Garantindo que os usuários forneçam informações válidas antes de enviar os dados.
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Envio de Dados para a API do Emailjs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Os dados do formulário são enviados para a API do Emailjs, proporcionando uma integração fácil e confiável para o envio de e-mails.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 3. Animações com AOS (Animate On Scroll)
 
-## Deploy on Vercel
+Adicionamos animações atraentes utilizando AOS para criar uma experiência de usuário mais dinâmica e envolvente.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 4. Modo Escuro e Modo Claro
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+A aplicação inclui uma funcionalidade de alternância entre modos claro e escuro, proporcionando uma experiência visual personalizável para os usuários.
+
+## Como Iniciar o Projeto Localmente
+
+Siga as instruções abaixo para iniciar o projeto em seu ambiente local:
+
+1. **Clonar o Repositório:**
+   ```bash
+   git clone https://github.com/alvesxdani/desafio-varos.git
+   ```
+
+2. **Instalar Dependências:**
+   ```bash
+   cd desafio-varos
+   npm install
+   ```
+
+3. **Executar a Aplicação:**
+   ```bash
+   npm run dev
+   ```
+
+A aplicação estará disponível em `http://localhost:3000`.
+
+## Contribuindo
+
+Se você deseja contribuir para o Projeto XYZ, siga estas etapas:
+
+1. Faça um fork do repositório.
+2. Crie uma nova branch para suas alterações: `git checkout -b feature/nova-feature`.
+3. Faça as alterações desejadas e comite: `git commit -m 'Adiciona nova feature'`.
+4. Envie suas alterações para o seu fork: `git push origin feature/nova-feature`.
+5. Abra um pull request para revisão.
