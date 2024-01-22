@@ -69,7 +69,7 @@ const Newsletter = () => {
         </p>
       </div>
 
-      <div className="bg-[#131516] border-[#222729] border p-8 rounded-[32px] gap-[22px] justify-center text-white w-full md:w-[50%]">
+      <div className="dark:bg-[#131516] dark:border-[#222729] dark:border p-8 rounded-[32px] gap-[22px] justify-center text-white w-full md:w-[50%]">
         <form
           onSubmit={sendEmail}
           ref={form}
@@ -82,7 +82,7 @@ const Newsletter = () => {
             value={name}
             placeholder="Nome"
             onChange={({ target }) => setName(target.value)}
-            className="bg-secondAccent border border-[#4D5358] py-3 px-5 rounded-md"
+            className="dark:bg-secondAccent border dark:border-[#4D5358] py-3 px-5 rounded-md"
           />
           <input
             type="email"
@@ -91,7 +91,7 @@ const Newsletter = () => {
             value={email}
             placeholder="Seu melhor e-mail"
             onChange={({ target }) => setEmail(target.value)}
-            className="bg-secondAccent border border-[#4D5358] py-3 px-5 rounded-md"
+            className="dark:bg-secondAccent border dark:border-[#4D5358] py-3 px-5 rounded-md"
           />
           <input
             type='tel'
@@ -100,7 +100,7 @@ const Newsletter = () => {
             value={msg}
             placeholder="Celular"
             onChange={({ target }) => setMsg(target.value)}
-            className="bg-secondAccent border border-[#4D5358] py-3 px-5 rounded-md"
+            className="dark:bg-secondAccent border dark:border-[#4D5358] py-3 px-5 rounded-md"
           />
           {error && <p className="text-red-500 mb-3">{error}</p>}
           <Button type="submit" bg="greenLight" format="square">
