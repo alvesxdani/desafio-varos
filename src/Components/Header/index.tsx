@@ -60,7 +60,7 @@ const Header = () => {
             priority={true}
             className="hidden lg:flex"
           />
-          <span className="flex">Assinar Agora</span>
+          <a href="/" className="flex">Assinar Agora</a>
         </div>
         <div className="hidden lg:flex gap-4 px-[13px] py-[10px]">
           <Image
@@ -71,7 +71,7 @@ const Header = () => {
             priority={true}
             className="hidden lg:block"
           />
-          <span className="w-auto">Entrar</span>
+          <a href="/" className="w-auto">Entrar</a>
         </div>
       </div>
 
