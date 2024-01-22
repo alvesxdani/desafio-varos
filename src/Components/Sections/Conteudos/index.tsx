@@ -1,10 +1,12 @@
 'use client'
 import Button from '@/Components/Button'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoMdArrowDropdown } from 'react-icons/io'
 import { IoMdArrowDropright } from 'react-icons/io'
 import { options } from './list'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Conteudos = () => {
   const [selectedTitle, setSelectedTitle] = useState<{
@@ -28,10 +30,18 @@ const Conteudos = () => {
     setSelectedTitle({ id: id, label: label, icon: icon })
   }
 
+    useEffect(() => {
+      AOS.init({
+        delay: 500,
+        duration: 2000,
+      })
+    }, [])
+
   return (
     <section
       id="conteudos"
       className="flex flex-col p-6 mb-24 gap-10 justify-center items-center"
+      data-aos="fade-in"
     >
       <div className="flex flex-col gap-4 md:w-[90%] lg:w-[100%] text-left">
         <h2 className="text-2xl md:text-[38px] text-center md:text-start leading-[120%] font-bold md:max-w-[60%]">

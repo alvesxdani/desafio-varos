@@ -1,18 +1,30 @@
+'use client'
 import Button from '@/Components/Button'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaArrowRightLong } from 'react-icons/fa6'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Intro = () => {
+  useEffect(() => {
+    AOS.init({
+      delay: 1000,
+      duration: 2000,
+    })
+  },[])
   return (
     <section
       id="intro"
       className="w-[100%] mt-[160px] flex items-center gap-[72px] mb-[164px] justify-center p-10"
     >
-      <div className="flex flex-col gap-7 md:w-[40%]">
+      <div className="flex flex-col gap-7 md:w-[40%]" data-aos="slide-up">
         <div className="flex flex-col items-center justify-center md:items-start gap-8">
           <div className="flex flex-col gap-6">
-            <h1 className="text-center font-semibold text-5xl leading-[50px] md:text-start">
+            <h1
+              className="text-center font-semibold text-5xl leading-[50px] md:text-start"
+              data-aos="slide-up"
+            >
               Investir de forma mais inteligente passa por aqui.
             </h1>
             <p className="text-center text-lg md:text-start">
@@ -20,7 +32,7 @@ const Intro = () => {
               melhor forma possível.
             </p>
           </div>
-          <Button format="rounded" bg="green" icon={<FaArrowRightLong/>}>
+          <Button format="rounded" bg="green" icon={<FaArrowRightLong />}>
             Comprar agora
           </Button>
         </div>

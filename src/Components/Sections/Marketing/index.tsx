@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
@@ -7,12 +7,22 @@ import 'swiper/css/autoplay'
 import 'swiper/css/pagination'
 import { comments } from './comments'
 import Image from 'next/image'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Marketing = () => {
+    useEffect(() => {
+      AOS.init({
+        delay: 500,
+        duration: 2000,
+      })
+    }, [])
+
   return (
     <section
       id="marketing"
       className="flex flex-col mb-44 gap-10 justify-center items-center md:flex-row m-6"
+      data-aos="slide-up"
     >
       <div className="flex flex-col gap-14">
         <div className="flex flex-col gap-2 p-2">

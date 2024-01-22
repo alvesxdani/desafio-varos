@@ -1,7 +1,9 @@
 'use client'
-import React, { FormEvent, useRef, useState } from 'react'
+import React, { FormEvent, useEffect, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import Button from '@/Components/Button'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Newsletter = () => {
   const form = useRef<HTMLFormElement>(null)
@@ -43,15 +45,20 @@ const Newsletter = () => {
       setBtn('QUERO ME INSCREVER')
       setError('Preencha todos os campos.')
     }
-    console.log(name.length)
-    console.log(email.length)
-    console.log(msg.length)
   }
+
+    useEffect(() => {
+      AOS.init({
+        delay: 500,
+        duration: 2000,
+      })
+    }, [])
 
   return (
     <section
       id="conteudos"
       className="flex flex-col p-6 mb-32 gap-10 justify-center items-center md:flex-row md:items-start"
+      data-aos="slide-right"
     >
       <div className="flex flex-col gap-2 md:w-[50%]">
         <h2 className="text-3xl text-center font-bold md:text-3xl md:text-start">
