@@ -31,7 +31,7 @@ const Button = ({
             : bg === 'dark'
             ? 'bg-[#131516] text-white border border-[#222729]'
             : bg === 'greenLight'
-            ? 'bg-primaryAccent text-black px-8 text-[18px] font-semibold tracking-wide'
+            ? 'bg-primaryAccent text-black px-8 text-[18px] font-semibold tracking-wide hover:brightness-125'
             : ''
         }`}
       type={type}
