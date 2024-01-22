@@ -14,8 +14,8 @@ const Marketing = () => {
       id="marketing"
       className="flex flex-col mb-44 gap-10 justify-center items-center md:flex-row m-6"
     >
-      <div className="flex flex-col gap-14 p-2">
-        <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-14">
+        <div className="flex flex-col gap-2 p-2">
           <h2 className="text-center text-5xl font-bold md:text-4xl md:text-start">
             Didática de verdade
           </h2>
@@ -24,7 +24,7 @@ const Marketing = () => {
           </p>
         </div>
 
-        <div className="flex justify-center w-dvw md:w-[415px] p-4">
+        <div className="flex justify-center w-dvw md:w-[400px] p-6">
           <Swiper
             autoplay={{
               delay: 1000,
