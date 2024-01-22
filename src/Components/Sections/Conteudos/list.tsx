@@ -61,7 +61,7 @@ export const options: IOptions[] = [
       {
         id: 5,
         label: 'Cursos Reels',
-        icon: '/Conteudos/cursos/minicurso.png',
+        icon: '/Conteudos/cursos/Minicurso.png',
       },
       {
         id: 6,
