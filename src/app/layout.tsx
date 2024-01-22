@@ -4,7 +4,9 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Varos',
-  description: 'Investir de forma mais inteligente passa por aqui.',
+  description: 'Investir de forma mais inteligente passa por aqui. Conheça!',
+  keywords: ['varos', 'investimentos', 'carteiras', 'finanças', 'fundos imobiliários', 'curso', 'cursos',
+    'cursos finanças', 'curso finança']
 }
 
 export default function RootLayout({
