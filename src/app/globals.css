@@ -6,6 +6,11 @@
 	@apply transition-colors duration-100
 }
 
+/* Links no geral */
+a:hover {
+	@apply text-primaryAccent
+}
+
 img {
   width: auto;
   height: auto;
