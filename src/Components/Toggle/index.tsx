@@ -23,7 +23,7 @@ const Toggle = () => {
     }, [darkMode])
 
   return (
-    <button onClick={() => setDarkMode(!darkMode)}>
+    <button onClick={() => setDarkMode(!darkMode)} aria-label={darkMode ? 'Mude para light mode' : 'Mude para Dark Mode'}>
       { darkMode ?
       <IoIosMoon size="1.7rem"/> :
       <MdOutlineWbSunny size="1.7rem" /> }
