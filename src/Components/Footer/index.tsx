@@ -50,7 +50,7 @@ const Footer = () => {
           <a href="/">Youtube</a>
         </div>
       </div>
-      <div className="flex flex-col text-sm order-2 md:order-3 lg:block lg:w-full lg:absolute lg:bottom-[-5rem]">
+      <div className="flex flex-col text-sm order-2 md:order-3 lg:block lg:w-full lg:absolute lg:bottom-[-5rem] lg:left-4">
         <p>VAROS 2023</p>
         <p>Todos os direitos reservados</p>
       </div>
