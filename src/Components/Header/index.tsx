@@ -47,7 +47,7 @@ const Header = () => {
         </a>
 
         {/* Menu desk */}
-        <Menu className="hidden lg:flex w-[100%] lg:gap-[70px]" />
+        <Menu className="hidden lg:flex w-[100%] lg:gap-[70px] leading-4" />
       </div>
 
       <div className="hidden lg:flex gap-2 items-center">
