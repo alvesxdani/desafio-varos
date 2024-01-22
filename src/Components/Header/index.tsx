@@ -35,14 +35,16 @@ const Header = () => {
   return (
     <header className="flex justify-between items-center flex-wrap h-[88px] px-10 py-3 font-[600] text-sm w-[100%]">
       <div className="flex gap-10">
-        <Image
-          src="./Header/logo.svg"
-          width={100}
-          height={20}
-          alt="Logo"
-          priority={true}
-          className="brightness-0 dark:brightness-100"
-        />
+        <a href="/">
+          <Image
+            src="./Header/logo.svg"
+            width={100}
+            height={20}
+            alt="Logo"
+            priority={true}
+            className="brightness-0 dark:brightness-100"
+          />
+        </a>
 
         {/* Menu desk */}
         <Menu className="hidden lg:flex w-[100%] lg:gap-[70px]" />
@@ -50,7 +52,7 @@ const Header = () => {
 
       <div className="hidden lg:flex gap-2 items-center">
         <div className="flex gap-4 whitespace-nowrap px-[13px] py-[10px]">
-        <Image
+          <Image
             src="./Header/carrinho.svg"
             width={10}
             height={10}
@@ -61,7 +63,7 @@ const Header = () => {
           <span className="flex">Assinar Agora</span>
         </div>
         <div className="hidden lg:flex gap-4 px-[13px] py-[10px]">
-        <Image
+          <Image
             src="./Header/user.svg"
             width={25}
             height={25}
@@ -88,14 +90,16 @@ const Header = () => {
       </div>
 
       {/* Menu mobile */}
-      {isOpen && <div className="flex lg:hidden transition-all z-50">
-        <Menu className="w-[100%] min-h-[100vh] flex flex-col text-4xl gap-10 items-center justify-center bg-white dark:bg-dark absolute top-0 left-0 z-5" />
-        <button className="asbolute right-0 top-0 dark:text-white z-10">
-          <IoClose size={30} onClick={toggleMenu}/>
-        </button>
-      </div>}
+      {isOpen && (
+        <div className="flex lg:hidden transition-all z-50">
+          <Menu className="w-[100%] min-h-[100vh] flex flex-col text-4xl gap-10 items-center justify-center bg-white dark:bg-dark absolute top-0 left-0 z-5" />
+          <button className="asbolute right-0 top-0 dark:text-white z-10">
+            <IoClose size={30} onClick={toggleMenu} />
+          </button>
+        </div>
+      )}
     </header>
-  );
+  )
 };
 
 export default Header;
