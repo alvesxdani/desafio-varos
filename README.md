@@ -51,13 +51,3 @@ Siga as instruções abaixo para iniciar o projeto em seu ambiente local:
    ```
 
 A aplicação estará disponível em `http://localhost:3000`.
-
-## Contribuindo
-
-Se você deseja contribuir para o Projeto XYZ, siga estas etapas:
-
-1. Faça um fork do repositório.
-2. Crie uma nova branch para suas alterações: `git checkout -b feature/nova-feature`.
-3. Faça as alterações desejadas e comite: `git commit -m 'Adiciona nova feature'`.
-4. Envie suas alterações para o seu fork: `git push origin feature/nova-feature`.
-5. Abra um pull request para revisão.
